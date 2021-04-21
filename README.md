@@ -7,8 +7,7 @@ as it *could* dramatically increase their S3 costs and SNS events will (almost a
 directory is updated.
 
 If the user does not need to add any [configuration](#configuration) outside of what is available by the CLI then they 
-can use the docker image: `bhowell2/aws-s3-sns-sync`. See [hub](https://hub.docker.com/r/bhowell2/aws-s3-sns-sync) for 
-versions.
+can use the docker image: `bhowell2/aws-s3-sns-sync:v0.1.0`. 
 
 In the case that the user wants to provide custom options (such as `keyTransformers`) not available to the CLI they can 
 use the NPM package to run it programmatically: `npm install aws-s3-sns-sync`.
@@ -30,7 +29,7 @@ to do this, but all boil down to mounting a volume or binding a host directory i
 
 See: https://docs.docker.com/storage/volumes/ for more info.
 
-`docker run -d -v /aws/sync/dir:/s3 bhowell2/aws-s3-mirror --bucket abucket --root-dir /s3`
+`docker run -d -v /aws/sync/dir:/s3 bhowell2/aws-s3-sns-sync --bucket abucket --root-dir /s3`
 
 ## Supported Versions
 Node >= 10 (b/c of jest-cli try/catch block.)
