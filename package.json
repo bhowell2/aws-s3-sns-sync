@@ -1,0 +1,51 @@
+{
+  "name": "aws-s3-sns-sync",
+  "version": "0.1.0",
+  "description": "Synchronizes a local directory with an AWS S3 bucket, watching for changes via SNS events and/or polling with the S3 LIST API.",
+  "main": "index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "rm -rf dist/ && tsc && webpack",
+    "test": "jest --silent=false --detectOpenHandles --runInBand",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhowell2/aws-s3-sns-sync.git"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=12.10.0"
+  },
+  "author": "bhowell2",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.13.0",
+    "@aws-sdk/client-sns": "^3.13.0",
+    "commander": "^7.2.0",
+    "sns-validator": "^0.3.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.41",
+    "jest": "^26.6.3",
+    "jest-util": "^26.6.2",
+    "ts-jest": "^26.5.5",
+    "typescript": "^4.2.4",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "sns",
+    "digitalocean",
+    "spaces",
+    "digitalocean spaces",
+    "mirror",
+    "synchronize",
+    "sync"
+  ]
+}

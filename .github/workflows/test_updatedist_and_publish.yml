@@ -1,0 +1,35 @@
+name: Test, update distribution, and publish on release.
+
+on:
+  push:
+  release:
+    types: [published, edited]
+
+jobs:
+
+  test:
+    strategy:
+      matrix:
+        node: [10, 12, 14]
+        platforms: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.platforms }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm test
+
+#  build_and_update_dist:
+#    name: Build and update distribution
+#    needs: test
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@2
+#      - uses: actions/setup-node@v2
+#        with:
+#          node-version: 14
+#      - run: npm install
+#      - run: npm run build
+#      -

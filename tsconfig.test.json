@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "lib": ["ES7", "ES6", "DOM"],
+    "target": "ES5",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./types", "node_modules/@types"],
+    "outDir": "./dist/",
+    "moduleResolution": "Node",
+    "declaration": true
+  },
+  "include": ["./src/index.ts"],
+  "exclude": ["node_modules", "dist"]
+}
